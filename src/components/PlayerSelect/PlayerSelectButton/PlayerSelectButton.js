@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { toggleSelectedMark } from 'features/playerSelectSlice';
+import { toggleSelectedMark } from 'features/gameSlice';
 
 function PlayerSelectButton({ icon, iconActive, mark }) {
-  const selectedMark = useSelector((state) => state.playerSelect.selectedMark);
+  const selectedMark = useSelector((state) => state.game.selectedMark);
   const dispatch = useDispatch();
 
   return (

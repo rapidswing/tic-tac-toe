@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import { selectOpponent } from 'features/playerSelectSlice';
+import { selectOpponent } from 'features/gameSlice';
 
 function OpponentSelector() {
   const dispatch = useDispatch();

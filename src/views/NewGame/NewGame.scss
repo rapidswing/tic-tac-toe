@@ -1,0 +1,104 @@
+@use 'utilities/variables'as v;
+
+.new-game-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.new-game {
+  font-weight: v.$font-weight-extrasmall;
+  width: 100%;
+  margin: 0 24px;
+
+  button {
+    cursor: pointer;
+  }
+
+  img {
+    object-fit: contain;
+    height: 32px;
+    width: 100%;
+  }
+}
+
+.player-selector {
+  background: v.$color-cyan;
+  border-radius: 15px;
+  box-shadow: inset 0px -8px 0px v.$color-cyan-darkest;
+  color: v.$color-gray;
+  margin: 32px 0;
+  text-align: center;
+
+  &-mark {
+    letter-spacing: v.$font-kerning-extrasmall;
+    padding: 24px 0;
+  }
+
+  &-reminder {
+    font-weight: v.$font-weight-body;
+    opacity: 0.5;
+    padding: 17px 0 30px;
+  }
+}
+
+.player-selector-toggle {
+  background: v.$color-cyan-dark;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 0px 24px;
+  padding: 8px 0px;
+
+  >button {
+    background: v.$color-cyan-dark;
+    border-radius: 10px;
+    border-style: none;
+    height: 54px;
+    width: 50%;
+    
+    &#btn-X {
+      margin-left: 8px;
+    }
+
+    &#btn-O {
+      margin-right: 8px;
+    }
+
+    &:hover {
+      background: rgba(168, 191, 201, 0.05);
+    }
+
+    &.active {
+      background: v.$color-gray;
+    }
+  }
+}
+
+.opponent-selector {
+  color: v.$color-cyan-dark;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+
+  >button {
+    border-style: none;
+    border-radius: 15px;
+    font-family: v.$font-family;
+    font-size: v.$font-size-extrasmall;
+    font-weight: v.$font-weight-extrasmall;
+    letter-spacing: v.$font-kerning-extrasmall;
+    padding: 14px 0 22px;
+  }
+}
+
+#vs-cpu-btn {
+  box-shadow: inset 0px -8px 0 v.$color-yellow-dark;
+  background: v.$color-yellow;
+  margin-bottom: 16px;
+}
+
+#vs-player-btn {
+  box-shadow: inset 0px -8px 0 v.$color-cyan-light;
+  background: v.$color-cyan-lighter;
+}

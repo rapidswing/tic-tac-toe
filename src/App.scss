@@ -1,0 +1,31 @@
+@use 'utilities/variables'as v;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: v.$color-cyan-dark;
+  display: flex;
+  justify-content: center;
+  font-family: v.$font-family;
+  font-size: v.$font-size-body;
+  font-weight: v.$font-weight-body;
+  letter-spacing: v.$font-kerning-body;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
+
+.App {
+  display: flex;
+  height: 100vh;
+  min-width: 375px;
+}

@@ -1,17 +1,17 @@
-import PlayerSelector from 'components/PlayerSelector';
-import OpponentSelector from 'components/OpponentSelector';
+import PlayerSelect from 'components/PlayerSelect/PlayerSelect';
+import OpponentSelect from 'components/OpponentSelect/OpponentSelect';
 
 import Logo from 'assets/logo.svg';
 
-// import './NewGame.scss';
+import './NewGame.scss';
 
 function NewGame() {
   return (
     <div className="new-game-container">
       <div className="new-game">
         <img src={Logo} alt="Tic-Tac-Toe logo" />
-        <PlayerSelector />
-        <OpponentSelector />
+        <PlayerSelect />
+        <OpponentSelect />
       </div>
     </div>
   )
