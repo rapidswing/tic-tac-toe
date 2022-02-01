@@ -25,13 +25,13 @@ function App() {
     })
   });
 
-  // attempt to load saved state from localStorage
-  useEffect(() => {
-    const gameState = localStorage.getItem('gameState');
-    if (!gameState) return;
-    const parsedGameState = JSON.parse(gameState);
-    dispatch(loadStateFromLocalStorage(parsedGameState));
-  }, [dispatch]);
+  // // attempt to load saved state from localStorage
+  // useEffect(() => {
+  //   const gameState = localStorage.getItem('gameState');
+  //   if (!gameState) return;
+  //   const parsedGameState = JSON.parse(gameState);
+  //   dispatch(loadStateFromLocalStorage(parsedGameState));
+  // }, [dispatch]);
 
   return (
     <div className="App">
