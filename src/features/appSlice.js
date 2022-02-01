@@ -37,6 +37,7 @@ export const gameSlice = createSlice({
 });
 
 export const {
+  changePage,
   reset
 } = gameSlice.actions;
 

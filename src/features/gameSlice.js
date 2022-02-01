@@ -6,6 +6,7 @@ import { getBoardResult } from "utilities/helpers";
 const initialState = {
   board: [...Array(9).fill(' ')],
   currentTurn: MARKS.X,
+  paused: false,
   selectedMark: MARKS.X,
   status: STATUS.INITIAL_GAME_LOAD,
   opponent: null,
@@ -54,6 +55,15 @@ export const gameSlice = createSlice({
         state.status = STATUS.PLAYER_TURN;
       }
     },
+    restartGame: (state) => {
+      state.board = [...Array(9).fill(' ')];
+      state.currentTurn = MARKS.X;
+      state.paused = false;
+      state.status = STATUS.INITIAL_GAME_LOAD;
+    },
+    togglePause: (state) => {
+      state.paused = !state.paused;
+    },
     toggleSelectedMark: (state, action) => {
       if (state.selectedMark !== action.payload) {
         state.selectedMark = state.selectedMark === MARKS.X ? MARKS.O : MARKS.X
@@ -68,8 +78,10 @@ export const {
   incrementX,
   incrementO,
   incrementTies,
+  restartGame,
   selectOpponent,
   setFirstTurn,
+  togglePause,
   toggleSelectedMark
 } = gameSlice.actions;
 
