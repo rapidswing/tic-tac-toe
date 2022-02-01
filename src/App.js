@@ -3,24 +3,21 @@ import { useSelector } from "react-redux";
 import { PAGES } from "utilities/constants";
 
 import NewGame from 'views/NewGame/NewGame'
-// import Game from "views/Game";
+import Game from "views/Game/Game";
 
-// import './App.scss';
+import './App.scss';
 
 function App() {
   const page = useSelector((state) => state.app.page);
 
   return (
     <div className="App">
-      {page === PAGES.PLAYER_SELECT &&
+      {page === PAGES.NEW_GAME &&
         <NewGame />
       }
-      {/* {app.page === PAGES.GAME &&
-        <Game
-          app={app}
-          quitApp={quitApp}
-        />
-      } */}
+      {page === PAGES.GAME &&
+        <Game />
+      }
     </div>
   );
 }
