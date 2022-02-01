@@ -61,18 +61,6 @@ export const gameSlice = createSlice({
         state.status = STATUS.PLAYER_TURN;
       }
     },
-    loadStateFromLocalStorage: (state, action) => {
-      state.board = action.payload.board || [...Array(9).fill(' ')];
-      state.currentTurn = action.payload.currentTurn || MARKS.X;
-      state.hoverIndex = -1;
-      state.paused = false;
-      state.selectedMark = action.payload.selectedMark || MARKS.X;
-      state.status = STATUS.INITIAL_GAME_LOAD;
-      state.opponent = action.payload.opponent || PLAYERS.CPU;
-      state.winsX = action.payload.winsX || 0;
-      state.winsO = action.payload.winsO || 0;
-      state.ties = action.payload.ties || 0;
-    },
     selectOpponent: (state, action) => {
       state.opponent = action.payload
     },
@@ -112,7 +100,6 @@ export const {
   removeHoverMark,
   addMarkToBoard,
   restartGame,
-  loadStateFromLocalStorage,
   selectOpponent,
   setFirstTurn,
   togglePause,
