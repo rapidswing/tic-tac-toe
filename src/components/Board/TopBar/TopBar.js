@@ -1,12 +1,13 @@
-import Logo from 'assets/logo.svg';
-import IconTurnX from 'assets/icon-x-inactive.svg';
-import IconTurnO from 'assets/icon-o-inactive.svg';
-import IconRestart from 'assets/icon-restart.svg';
-
 import { useDispatch, useSelector } from 'react-redux';
+
 import { togglePause } from 'features/gameSlice';
 
 import { MARKS } from 'utilities/constants';
+
+import IconRestart from 'assets/icon-restart.svg';
+import IconTurnO from 'assets/icon-o-inactive.svg';
+import IconTurnX from 'assets/icon-x-inactive.svg';
+import Logo from 'assets/logo.svg';
 
 import './TopBar.scss';
 

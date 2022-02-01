@@ -1,21 +1,16 @@
-import { useDispatch, useSelector } from "react-redux";
-
-import { PAGES } from "utilities/constants";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import WebFont from 'webfontloader';
 
 import NewGame from 'views/NewGame/NewGame'
 import Game from "views/Game/Game";
 
-import { loadStateFromLocalStorage } from "features/gameSlice";
-
-import WebFont from 'webfontloader';
+import { PAGES } from "utilities/constants";
 
 import './App.scss';
-import { useEffect } from "react";
-
 
 function App() {
   const page = useSelector((state) => state.app.page);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     WebFont.load({
@@ -24,14 +19,6 @@ function App() {
       }
     })
   });
-
-  // // attempt to load saved state from localStorage
-  // useEffect(() => {
-  //   const gameState = localStorage.getItem('gameState');
-  //   if (!gameState) return;
-  //   const parsedGameState = JSON.parse(gameState);
-  //   dispatch(loadStateFromLocalStorage(parsedGameState));
-  // }, [dispatch]);
 
   return (
     <div className="App">

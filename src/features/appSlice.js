@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import { loadStateFromLocalStorage } from "features/gameSlice";
+import { selectOpponent } from "features/gameSlice";
 
 import { PAGES } from "utilities/constants";
-import { selectOpponent } from "features/gameSlice";
 
 const initialState = {
   page: PAGES.NEW_GAME

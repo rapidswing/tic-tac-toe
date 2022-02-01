@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
 
-import { STATUS, OPPONENTS, BOARD_RESULTS } from "utilities/constants";
 import { getBoardResult } from "utilities/helpers";
+
+import { STATUS, OPPONENTS, BOARD_RESULTS } from "utilities/constants";
 
 function ModalTop() {
   const board = useSelector((state) => state.game.board);

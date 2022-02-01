@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { BOARD_RESULTS, MARKS, PLAYERS, STATUS } from "utilities/constants";
 import { getBoardResult } from "utilities/helpers";
+
+import { BOARD_RESULTS, MARKS, PLAYERS, STATUS } from "utilities/constants";
 
 const initialState = {
   board: [...Array(9).fill(' ')],

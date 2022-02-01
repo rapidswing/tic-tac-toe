@@ -1,6 +1,6 @@
-import { MARKS } from 'utilities/constants';
-
 import PlayerSelectButton from 'components/PlayerSelect/PlayerSelectButton/PlayerSelectButton';
+
+import { MARKS } from 'utilities/constants';
 
 import xIconActive from 'assets/icon-x-active.svg';
 import xIcon from 'assets/icon-x-inactive.svg';

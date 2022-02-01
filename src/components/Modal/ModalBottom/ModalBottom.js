@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
 
-import { BOARD_RESULTS, STATUS } from '../../../utilities/constants';
+import { getBoardResult } from "utilities/helpers";
 
-import { getBoardResult } from "../../../utilities/helpers";
+import { BOARD_RESULTS, STATUS } from 'utilities/constants';
 
-import iconX from '../../../assets/icon-x.svg';
-import iconO from '../../../assets/icon-o.svg';
+import iconO from 'assets/icon-o.svg';
+import iconX from 'assets/icon-x.svg';
 
 function ModalBottom() {
   const board = useSelector((state) => state.game.board);

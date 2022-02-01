@@ -1,12 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { PAGES, STATUS } from 'utilities/constants';
-
-import { changePage } from 'features/appSlice';
 import { restartGame, reset, togglePause } from 'features/gameSlice';
 
-import ModalTop from 'components/Modal/ModalTop/ModalTop';
 import ModalBottom from 'components/Modal/ModalBottom/ModalBottom';
+import ModalTop from 'components/Modal/ModalTop/ModalTop';
 
 import './Modal.scss';
 

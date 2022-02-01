@@ -1,16 +1,17 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import TopBar from 'components/Board/TopBar/TopBar';
+import { addMarkToBoard, setFirstTurn } from 'features/gameSlice';
+import { getAvailableMoves, getCpuMoveIndex } from 'utilities/helpers';
 import Board from 'components/Board/Board';
 import BottomBar from 'components/Board/BottomBar/BottomBar';
 import Modal from 'components/Modal/Modal';
+import TopBar from 'components/Board/TopBar/TopBar';
 
-import { getAvailableMoves, getCpuMoveIndex } from 'utilities/helpers';
 import { STATUS } from 'utilities/constants';
 
 import './Game.scss';
-import { addMarkToBoard, loadStateFromLocalStorage, reset, setFirstTurn } from 'features/gameSlice';
+
 
 function Game() {
   const board = useSelector((state) => state.game.board);

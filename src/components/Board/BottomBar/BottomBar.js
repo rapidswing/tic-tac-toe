@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+
 import { MARKS, OPPONENTS } from 'utilities/constants';
 
 import './BottomBar.scss';

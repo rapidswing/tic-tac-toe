@@ -1,18 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit';
-import storage from 'redux-persist/lib/storage';
-import { combineReducers } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 
 import appReducer from 'features/appSlice';
 import gameReducer from 'features/gameSlice';
-
-// export const store = configureStore({
-//   reducer: {
-//     app: appReducer,
-//     game: gameReducer
-//   },
-// });
 
 const reducers = combineReducers({
   app: appReducer,

@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addMarkToBoard } from 'features/gameSlice';
+import GameSquare from 'components/Board/GameSquare/GameSquare';
 
-import GameSquare from './GameSquare/GameSquare';
+import { STATUS } from 'utilities/constants';
 
 import './Board.scss';
-import { STATUS } from 'utilities/constants';
 
 function Board() {
   const board = useSelector((state) => state.game.board);
