@@ -14,7 +14,7 @@ function Board() {
 
   const handleBoardClick = (event) => {
     if (status !== STATUS.PLAYER_TURN) return;  // not the player's turn
-    if (event.target.className !== 'cell') return;  // didn't click on cell
+    if (event.target.className !== 'cell' && event.target.parentElement.className !== 'board') return;  // didn't click on cell
     let index = Number(event.target.getAttribute('index'));
     dispatch(addMarkToBoard(index));
   }
@@ -25,8 +25,6 @@ function Board() {
         return (
           <GameSquare
             cell={cell}
-            // hoverMark={hoverMark}
-            // dispatchHoverMark={dispatchHoverMark}
             index={index}
             key={index}
           />

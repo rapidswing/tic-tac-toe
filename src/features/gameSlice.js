@@ -6,6 +6,7 @@ import { getBoardResult } from "utilities/helpers";
 const initialState = {
   board: [...Array(9).fill(' ')],
   currentTurn: MARKS.X,
+  hoverIndex: -1,
   paused: false,
   selectedMark: MARKS.X,
   status: STATUS.INITIAL_GAME_LOAD,
@@ -68,6 +69,12 @@ export const gameSlice = createSlice({
         state.status = STATUS.PLAYER_TURN;
       }
     },
+    addHoverMark: (state, action) => {
+      state.hoverIndex = action.payload
+    },
+    removeHoverMark: (state) => {
+      state.hoverIndex = -1;
+    },
     restartGame: (state) => {
       state.board = [...Array(9).fill(' ')];
       state.currentTurn = MARKS.X;
@@ -87,6 +94,8 @@ export const gameSlice = createSlice({
 
 export const {
   reset,
+  addHoverMark,
+  removeHoverMark,
   addMarkToBoard,
   restartGame,
   selectOpponent,
