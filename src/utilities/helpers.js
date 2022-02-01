@@ -1,4 +1,4 @@
-import { BOARD_RESULTS, MARKS } from "utilities/constants";
+import { BOARD_RESULTS } from "utilities/constants";
 
 export const getAvailableMoves = (board) => {
   let newAvailableMoves = [];
@@ -8,6 +8,10 @@ export const getAvailableMoves = (board) => {
     }
   });
   return newAvailableMoves;
+}
+
+export const getCpuMoveIndex = (availableBoard) => {
+  return availableBoard[Math.floor(Math.random() * availableBoard.length)];
 }
 
 export const getBoardResult = (board) => {

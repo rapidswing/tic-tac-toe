@@ -4,7 +4,6 @@ import { BOARD_RESULTS, MARKS, PLAYERS, STATUS } from "utilities/constants";
 import { getBoardResult } from "utilities/helpers";
 
 const initialState = {
-  availableMoves: [...Array(9).keys()],
   board: [...Array(9).fill(' ')],
   currentTurn: MARKS.X,
   selectedMark: MARKS.X,
@@ -29,11 +28,14 @@ export const gameSlice = createSlice({
         state.status = STATUS.GAME_OVER;
         return;
       }
-      // if the game isn't over, change the turn
-      // and determine if the CPU or a player is next
+      // the game isn't over, change the turn
+      state.currentTurn = state.currentTurn === MARKS.X ? MARKS.O : MARKS.X;
+      // determine if the CPU or a player is next
       if (state.opponent === PLAYERS.CPU) {  // the cpu is playing
-        if (state.currentTurn === state.selectedMark) {  // it's currently P1's turn 
+        if (state.currentTurn !== state.selectedMark) {  // it's not P1's turn 
           state.status = STATUS.CPU_TURN;
+        } else {
+          state.status = STATUS.PLAYER_TURN;
         }
       } else {
         state.status = STATUS.PLAYER_TURN;
@@ -44,6 +46,13 @@ export const gameSlice = createSlice({
     incrementTies: (state) => state.ties++,
     selectOpponent: (state, action) => {
       state.opponent = action.payload
+    },
+    setFirstTurn: (state) => {
+      if (state.opponent === PLAYERS.CPU && state.selectedMark !== MARKS.X) {
+        state.status = STATUS.CPU_TURN;
+      } else {
+        state.status = STATUS.PLAYER_TURN;
+      }
     },
     toggleSelectedMark: (state, action) => {
       if (state.selectedMark !== action.payload) {
@@ -60,6 +69,7 @@ export const {
   incrementO,
   incrementTies,
   selectOpponent,
+  setFirstTurn,
   toggleSelectedMark
 } = gameSlice.actions;
 
