@@ -1,0 +1,34 @@
+@use 'utilities/variables' as v;
+
+.bottom-bar {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  height: 64px;
+  margin-top: 20px;
+}
+
+.score {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &-amount {
+    font-size: v.$font-size-small;
+  }
+
+  &.left {
+    background: v.$color-cyan-lighter;
+  }
+
+  &.center {
+    background: v.$color-gray;
+  }
+
+  &.right {
+    background: v.$color-yellow;
+  }
+}

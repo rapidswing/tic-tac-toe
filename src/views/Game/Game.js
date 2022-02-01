@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import TopBar from 'components/Board/TopBar/TopBar';
 import Board from 'components/Board/Board';
-// import BottomBar from './BottomBar/BottomBar';
+import BottomBar from 'components/Board/BottomBar/BottomBar';
 import Modal from 'components/Modal/Modal';
 
 import { getAvailableMoves, getCpuMoveIndex } from 'utilities/helpers';
@@ -44,7 +44,7 @@ function Game() {
       }
       <TopBar />
       <Board />
-      {/* <BottomBar /> */}
+      <BottomBar />
     </div>
   );
 }

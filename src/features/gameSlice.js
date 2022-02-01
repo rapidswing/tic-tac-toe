@@ -25,9 +25,25 @@ export const gameSlice = createSlice({
       if (state.board[index] !== ' ') return;  // move is invalid
       state.board[index] = state.currentTurn;
       let result = getBoardResult(state.board);
-      if (result === BOARD_RESULTS.X || result === BOARD_RESULTS.O || result === BOARD_RESULTS.TIE) {
-        state.status = STATUS.GAME_OVER;
-        return;
+      switch (result) {
+        case BOARD_RESULTS.X: {
+          state.winsX++;
+          state.status = STATUS.GAME_OVER;
+          return;
+        }
+        case BOARD_RESULTS.O: {
+          state.winsO++;
+          state.status = STATUS.GAME_OVER;
+          return;
+        }
+        case BOARD_RESULTS.TIE: {
+          state.ties++;
+          state.status = STATUS.GAME_OVER;
+          return;
+        }
+        default: {
+          break;
+        }
       }
       // the game isn't over, change the turn
       state.currentTurn = state.currentTurn === MARKS.X ? MARKS.O : MARKS.X;
@@ -42,9 +58,6 @@ export const gameSlice = createSlice({
         state.status = STATUS.PLAYER_TURN;
       }
     },
-    incrementX: (state) => state.winsX++,
-    incrementO: (state) => state.winsO++,
-    incrementTies: (state) => state.ties++,
     selectOpponent: (state, action) => {
       state.opponent = action.payload
     },
@@ -75,9 +88,6 @@ export const gameSlice = createSlice({
 export const {
   reset,
   addMarkToBoard,
-  incrementX,
-  incrementO,
-  incrementTies,
   restartGame,
   selectOpponent,
   setFirstTurn,
