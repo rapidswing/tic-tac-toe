@@ -10,7 +10,8 @@ export const gameSlice = createSlice({
   name: 'game',
   initialState,
   reducers: {
-    reset: () => initialState
+    reset: () => initialState,
+    changePage: (state, action) => state.page = action.payload
   }
 });
 

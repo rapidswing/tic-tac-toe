@@ -11,12 +11,16 @@ export const playerSelectSlice = createSlice({
   name: 'playerSelect',
   initialState,
   reducers: {
-    reset: () => initialState
+    reset: () => initialState,
+    selectOpponent: (state, action) => state.opponent = action.payload,
+    toggleSelectedMark: (state) => state.selectedMark === MARKS.X ? MARKS.O : MARKS.X
   }
 });
 
 export const {
-  reset
+  reset,
+  selectOpponent,
+  toggleSelectedMark
 } = playerSelectSlice.actions;
 
 export default playerSelectSlice.reducer;
