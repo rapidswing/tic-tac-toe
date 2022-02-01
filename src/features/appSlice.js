@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { loadStateFromLocalStorage } from "features/gameSlice";
 
 import { PAGES } from "utilities/constants";
 import { selectOpponent } from "features/gameSlice";
@@ -17,7 +18,10 @@ export const gameSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // change the app page
+      // change the app page when opponent is selected
+      .addCase(loadStateFromLocalStorage, (state, action) => {
+        state.page = PAGES.GAME;
+      })
       .addCase(selectOpponent, (state) => {
         switch (state.page) {
           case PAGES.NEW_GAME: {

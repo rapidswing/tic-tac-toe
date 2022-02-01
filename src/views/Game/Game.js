@@ -10,7 +10,7 @@ import { getAvailableMoves, getCpuMoveIndex } from 'utilities/helpers';
 import { STATUS } from 'utilities/constants';
 
 import './Game.scss';
-import { addMarkToBoard, setFirstTurn } from 'features/gameSlice';
+import { addMarkToBoard, loadStateFromLocalStorage, reset, setFirstTurn } from 'features/gameSlice';
 
 function Game() {
   const board = useSelector((state) => state.game.board);
