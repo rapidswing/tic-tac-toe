@@ -3,16 +3,18 @@ import OpponentSelector from 'components/OpponentSelector';
 
 import Logo from 'assets/logo.svg';
 
-import './NewGame.scss';
+// import './NewGame.scss';
 
 function NewGame() {
-  <div className="new-game-container">
-    <div className="new-game">
-      <img src={Logo} alt="Tic-Tac-Toe logo" />
-      <PlayerSelector />
-      <OpponentSelector />
+  return (
+    <div className="new-game-container">
+      <div className="new-game">
+        <img src={Logo} alt="Tic-Tac-Toe logo" />
+        <PlayerSelector />
+        <OpponentSelector />
+      </div>
     </div>
-  </div>
+  )
 };
 
 export default NewGame;

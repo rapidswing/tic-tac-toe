@@ -2,10 +2,10 @@ import { useSelector } from "react-redux";
 
 import { PAGES } from "utilities/constants";
 
-import NewGame from 'views/NewGame'
+import NewGame from 'views/NewGame/NewGame'
 // import Game from "views/Game";
 
-import './App.scss';
+// import './App.scss';
 
 function App() {
   const page = useSelector((state) => state.app.page);

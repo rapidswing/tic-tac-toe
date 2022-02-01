@@ -8,7 +8,8 @@ import oIconActive from 'assets/icon-o-active.svg';
 import oIcon from 'assets/icon-o-inactive.svg';
 
 function PlayerSelector() {
-  <div className="player-selector">
+  return (
+    <div className="player-selector">
     <div className="player-selector-mark">
       PICK PLAYER 1'S MARK
     </div>
@@ -28,7 +29,7 @@ function PlayerSelector() {
       REMEMBER : X GOES FIRST
     </div>
   </div>
+  )
 };
-
 
 export default PlayerSelector;

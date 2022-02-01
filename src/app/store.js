@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import appReducer from 'features/appSlice';
 import boardReducer from 'features/boardSlice';
-import gameReducer from 'features/gameReducer';
+import gameReducer from 'features/gameSlice';
 import playerSelectReducer from 'features/playerSelectSlice';
 import scoreReducer from 'features/scoreSlice';
 

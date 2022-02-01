@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit";
 
-import { MARKS } from "utilities/constants"
+import { MARKS } from "utilities/constants";
 
 const initialState = {
   selectedMark: MARKS.X,
@@ -12,8 +12,14 @@ export const playerSelectSlice = createSlice({
   initialState,
   reducers: {
     reset: () => initialState,
-    selectOpponent: (state, action) => state.opponent = action.payload,
-    toggleSelectedMark: (state) => state.selectedMark === MARKS.X ? MARKS.O : MARKS.X
+    selectOpponent: (state, action) => {
+      state.opponent = action.payload
+    },
+    toggleSelectedMark: (state, action) => {
+      if (state.selectedMark !== action.payload) {
+        state.selectedMark = state.selectedMark === MARKS.X ? MARKS.O : MARKS.X
+      }
+    }
   }
 });
 
