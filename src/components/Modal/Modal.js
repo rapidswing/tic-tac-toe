@@ -11,7 +11,7 @@ import ModalBottom from 'components/Modal/ModalBottom/ModalBottom';
 import './Modal.scss';
 
 function Modal() {
-  const status = useSelector((state) => state.game.status);
+  const paused = useSelector((state) => state.game.paused);
   const dispatch = useDispatch();
 
   const handleRestartGame = () => {
@@ -29,7 +29,7 @@ function Modal() {
   return (
     <div className="modal-background">
       <div className="modal-content">
-        {status === STATUS.PAUSED ?
+        {paused ?
           (
             <>
               <ModalBottom />

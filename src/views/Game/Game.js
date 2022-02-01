@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-// import TopBar from './TopBar/TopBar';
+import TopBar from 'components/Board/TopBar/TopBar';
 import Board from 'components/Board/Board';
 // import BottomBar from './BottomBar/BottomBar';
 import Modal from 'components/Modal/Modal';
@@ -42,7 +42,7 @@ function Game() {
           <Modal /> :
           <></>
       }
-      {/* <TopBar /> */}
+      <TopBar />
       <Board />
       {/* <BottomBar /> */}
     </div>

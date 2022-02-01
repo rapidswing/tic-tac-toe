@@ -9,6 +9,7 @@ import iconO from '../../../assets/icon-o.svg';
 
 function ModalBottom() {
   const board = useSelector((state) => state.game.board);
+  const paused = useSelector((state) => state.game.paused);
   const status = useSelector((state) => state.game.status);
 
   if (status === STATUS.GAME_OVER) {  // game is over
@@ -41,7 +42,7 @@ function ModalBottom() {
       }
     }
   }
-  if (status === STATUS.PAUSED) {  // game is paused
+  if (paused) {  // game is paused
     return <div className="modal-content-bottom-text">RESTART GAME?</div>
   }
   return <></>
