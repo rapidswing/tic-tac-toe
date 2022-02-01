@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { loadStateFromLocalStorage } from "features/gameSlice";
 import { selectOpponent } from "features/gameSlice";
 
 import { PAGES } from "utilities/constants";
