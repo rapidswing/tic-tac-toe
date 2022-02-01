@@ -33,3 +33,8 @@ export const BOARD_RESULTS = {
   TIE: 'TIE',
   CONTINUE: 'CONTINUE'
 }
+
+export const BOARD_RESULT_MODES = {
+  TYPE: 'TYPE',
+  SCORE: 'SCORE'
+}

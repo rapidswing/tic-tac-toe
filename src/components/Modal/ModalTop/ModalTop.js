@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 import { getBoardResult } from "utilities/helpers";
 
-import { STATUS, OPPONENTS, BOARD_RESULTS } from "utilities/constants";
+import { STATUS, OPPONENTS, BOARD_RESULTS, BOARD_RESULT_MODES } from "utilities/constants";
 
 function ModalTop() {
   const board = useSelector((state) => state.game.board);
@@ -11,7 +11,7 @@ function ModalTop() {
   const selectedMark = useSelector((state) => state.game.selectedMark);
 
   let topText = '';
-  let boardResult = getBoardResult(board);
+  let boardResult = getBoardResult(board, BOARD_RESULT_MODES.TYPE);
   if (status === STATUS.GAME_OVER) {  // game is over
     if (boardResult !== BOARD_RESULTS.TIE) {  // it's not a tie
       if (boardResult === selectedMark) {  // you won

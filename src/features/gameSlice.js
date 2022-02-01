@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { getBoardResult } from "utilities/helpers";
 
-import { BOARD_RESULTS, MARKS, PLAYERS, STATUS } from "utilities/constants";
+import { BOARD_RESULTS, BOARD_RESULT_MODES, MARKS, PLAYERS, STATUS } from "utilities/constants";
 
 const initialState = {
   board: [...Array(9).fill(' ')],
@@ -27,7 +27,7 @@ export const gameSlice = createSlice({
       let index = action.payload;
       if (state.board[index] !== ' ') return;  // move is invalid
       state.board[index] = state.currentTurn;
-      let result = getBoardResult(state.board);
+      let result = getBoardResult(state.board, BOARD_RESULT_MODES.TYPE);
       switch (result) {
         case BOARD_RESULTS.X: {
           state.winsX++;
