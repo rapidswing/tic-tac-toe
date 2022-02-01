@@ -1,0 +1,90 @@
+@use 'utilities/variables' as v;
+
+.modal-background {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.modal-content {
+  background: v.$color-cyan;
+  color: v.$color-gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: v.$font-weight-extrasmall;
+  letter-spacing: v.$font-kerning-medium;
+  opacity: 0.9;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  height: fit-content;
+  position: absolute;
+  left: 0;
+  width: 100vw;
+
+  button {
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: v.$font-family;
+    font-size: v.$font-size-extrasmall;
+    font-weight: v.$font-weight-extrasmall;
+    letter-spacing: v.$font-kerning-extrasmall;
+    padding: 16px;
+  }
+}
+
+.modal-content-top-text {
+  padding-bottom: 16px;
+}
+
+.modal-content-bottom-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: v.$font-size-medium;
+
+  >img {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+.modal-choices {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.modal-content-restart, .modal-content-end {
+  font-size: v.$font-size-medium;
+  font-weight: v.$font-weight-medium;
+  letter-spacing: v.$font-kerning-medium;
+}
+
+#modal-cancel, #modal-quit {
+  background: v.$color-gray;
+  box-shadow: inset 0 -4px 0 v.$color-gray-dark;
+  color: v.$color-cyan-dark;
+}
+
+#modal-restart, #modal-nextround {
+  background: v.$color-yellow;
+  box-shadow: inset 0 -4px 0 v.$color-yellow-dark;
+  color: v.$color-cyan-dark;
+}
+
+.x-win {
+  color: v.$color-cyan-lighter;
+}
+
+.o-win {
+  color: v.$color-yellow;
+}

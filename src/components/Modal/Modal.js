@@ -8,7 +8,7 @@ import { restartGame, reset, togglePause } from 'features/gameSlice';
 import ModalTop from 'components/Modal/ModalTop/ModalTop';
 import ModalBottom from 'components/Modal/ModalBottom/ModalBottom';
 
-// import './Modal.scss';
+import './Modal.scss';
 
 function Modal() {
   const status = useSelector((state) => state.game.status);
@@ -20,7 +20,6 @@ function Modal() {
 
   const handleQuit = () => {
     dispatch(reset());
-    // dispatch(changePage(PAGES.NEW_GAME));
   }
 
   const handleTogglePause = () => {
