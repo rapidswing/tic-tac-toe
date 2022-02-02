@@ -2,20 +2,20 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addMarkToBoard, setFirstTurn } from 'features/gameSlice';
-import { getAvailableMoves, getCpuMoveIndex } from 'utilities/helpers';
 import Board from 'components/Board/Board';
 import BottomBar from 'components/Board/BottomBar/BottomBar';
 import Modal from 'components/Modal/Modal';
 import TopBar from 'components/Board/TopBar/TopBar';
 
-import { STATUS } from 'utilities/constants';
+import { MARKS, STATUS } from 'utilities/constants';
+import { findBestMove } from 'utilities/helpers';
 
 import './Game.scss';
-
 
 function Game() {
   const board = useSelector((state) => state.game.board);
   const paused = useSelector((state) => state.game.paused);
+  const selectedMark = useSelector((state) => state.game.selectedMark);
   const status = useSelector((state) => state.game.status);
   const dispatch = useDispatch();
 
@@ -26,15 +26,16 @@ function Game() {
         break;
       }
       case STATUS.CPU_TURN: {
-        let availableMoves = getAvailableMoves(board);
-        dispatch(addMarkToBoard(getCpuMoveIndex(availableMoves)));
+        let oppositeMark = selectedMark === MARKS.X ? MARKS.O : MARKS.X;
+        let cpuMove = findBestMove(board, oppositeMark);
+        dispatch(addMarkToBoard(cpuMove));
         break;
       }
       default: {
         break;
       }
     }
-  }, [board, dispatch, status])
+  }, [board, dispatch, selectedMark, status])
 
   return (
     <div className="game">

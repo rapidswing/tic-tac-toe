@@ -8,24 +8,24 @@ import xIconOutline from 'assets/icon-x-outline.svg';
 import oIconOutline from 'assets/icon-o-outline.svg';
 
 const GameSquare = ({ cell, index }) => {
-  const hoverIndex = useSelector((state) => state.game.hoverIndex);
   const currentTurn = useSelector((state) => state.game.currentTurn);
+  const hoverIndex = useSelector((state) => state.game.hoverIndex);
   const dispatch = useDispatch();
 
-  const handleMouseEnter = () => {
-    dispatch(addHoverMark(index));
+  const handleMouseEnter = (index) => {
+    dispatch(addHoverMark(Number(index)));
   }
 
-  const handleMouseLeave = () => {
-    dispatch(removeHoverMark(index));
+  const handleMouseLeave = (index) => {
+    dispatch(removeHoverMark());
   }
 
   return (
     <button
       className="cell"
       index={index}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+      onMouseEnter={(event) => handleMouseEnter(event.target.getAttribute('index'))}
+      onMouseLeave={() => handleMouseLeave()}
       value={cell}
     >
       {hoverIndex === index && cell === ' ' ?
