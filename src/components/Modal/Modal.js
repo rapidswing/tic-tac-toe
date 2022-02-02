@@ -63,9 +63,9 @@ function Modal() {
           <>
             <div className="modal-choices-settings">
               <div className="modal-choices-difficulty">
-                <button className={difficulty === DIFFICULTIES.EASY && 'active'} id={`${DIFFICULTIES.EASY}`} onClick={(event) => handleDifficulty(event.target.id)}>EASY</button>
-                <button className={difficulty === DIFFICULTIES.NORMAL && 'active'} id={`${DIFFICULTIES.NORMAL}`} onClick={(event) => handleDifficulty(event.target.id)}>MEDIUM</button>
-                <button className={difficulty === DIFFICULTIES.HARD && 'active'} id={`${DIFFICULTIES.HARD}`} onClick={(event) => handleDifficulty(event.target.id)}>HARD</button>
+                <button className={(difficulty === DIFFICULTIES.EASY) && 'active'} id={`${DIFFICULTIES.EASY}`} onClick={(event) => handleDifficulty(event.target.id)}>EASY</button>
+                <button className={(difficulty === DIFFICULTIES.NORMAL) && 'active'} id={`${DIFFICULTIES.NORMAL}`} onClick={(event) => handleDifficulty(event.target.id)}>MEDIUM</button>
+                <button className={(difficulty === DIFFICULTIES.HARD) && 'active'} id={`${DIFFICULTIES.HARD}`} onClick={(event) => handleDifficulty(event.target.id)}>HARD</button>
               </div>
               <div className="modal-choices-quit-or-cancel">
                 <button onClick={handleCancel} className="modal-choices-cancel">

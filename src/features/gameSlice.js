@@ -8,7 +8,6 @@ const initialState = {
   board: [...Array(9).fill(' ')],
   currentTurn: MARKS.X,
   difficulty: DIFFICULTIES.EASY,
-  hoverIndex: -1,
   modalState: MODAL_STATES.NONE,
   selectedMark: MARKS.X,
   status: STATUS.INITIAL_GAME_LOAD,
@@ -77,12 +76,6 @@ export const gameSlice = createSlice({
         state.status = STATUS.PLAYER_TURN;
       }
     },
-    addHoverMark: (state, action) => {
-      state.hoverIndex = action.payload
-    },
-    removeHoverMark: (state) => {
-      state.hoverIndex = -1;
-    },
     resetRecord: (state) => {
       state.winsX = 0;
       state.winsO = 0;
@@ -111,8 +104,6 @@ export const gameSlice = createSlice({
 
 export const {
   reset,
-  addHoverMark,
-  removeHoverMark,
   addMarkToBoard,
   removeMarkFromBoard,
   resetRecord,

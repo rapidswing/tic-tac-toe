@@ -1,6 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
-
-import { addHoverMark, removeHoverMark } from 'features/gameSlice';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import iconX from 'assets/icon-x.svg';
 import iconO from 'assets/icon-o.svg';
@@ -8,16 +7,15 @@ import xIconOutline from 'assets/icon-x-outline.svg';
 import oIconOutline from 'assets/icon-o-outline.svg';
 
 const GameSquare = ({ cell, index }) => {
+  const [hoverIndex, setHoverIndex] = useState(-1);
   const currentTurn = useSelector((state) => state.game.currentTurn);
-  const hoverIndex = useSelector((state) => state.game.hoverIndex);
-  const dispatch = useDispatch();
 
   const handleMouseEnter = (index) => {
-    dispatch(addHoverMark(Number(index)));
+    setHoverIndex(Number(index));
   }
 
-  const handleMouseLeave = (index) => {
-    dispatch(removeHoverMark());
+  const handleMouseLeave = () => {
+    setHoverIndex(-1);
   }
 
   return (
