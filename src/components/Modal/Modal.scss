@@ -69,23 +69,29 @@
 
   &-settings {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 20px;
   }
 
   &-difficulty {
     display: flex;
-    flex-direction: column;
     gap: 20px;
 
     button {
       background-color: v.$color-gray-dark;
       min-height: 72px;
+      min-width: 100px;
 
       &.active {
         background-color: v.$color-white;
       }
     }
+  }
+
+  &-quit-or-cancel {
+    display: flex;
+    gap: 20px;
   }
 
   &-quit-game {

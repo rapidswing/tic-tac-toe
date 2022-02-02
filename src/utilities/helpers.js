@@ -1,4 +1,4 @@
-import { BOARD_RESULTS, BOARD_RESULT_MODES, MARKS } from "utilities/constants";
+import { BOARD_RESULTS, BOARD_RESULT_MODES, DIFFICULTIES, MARKS } from "utilities/constants";
 
 const areMovesLeft = (board) => {
   for (let i = 0; i <= 8; i++) {
@@ -68,7 +68,48 @@ function minMax(board, cpuMark, depth, isMax) {
   }
 }
 
-export function findBestMove(tempBoard, cpuMark) {
+export const moveWithDifficulty = (board, cpuMark, difficulty) => {
+  // EASY: random moves
+  // NORMAL: 50% perfect moves
+  // HARD: 80% perfect moves
+  switch (difficulty) {
+    case DIFFICULTIES.EASY: {
+      return findRandomMove(board);
+    }
+    case DIFFICULTIES.NORMAL: {
+      let chance = Math.random() < 0.5;
+      if (chance) {
+        return findBestMove(board, cpuMark, difficulty);
+      } else {
+        return findRandomMove(board);
+      }
+    }
+    case DIFFICULTIES.HARD: {
+      let chance = Math.random() < 0.8;
+      if (chance) {
+        return findBestMove(board, cpuMark, difficulty);
+      } else {
+        return findRandomMove(board);
+      }
+    }
+    default: {
+      return null;
+    }
+  }
+}
+
+function findRandomMove(board, cpuMark) {
+  let availableMoves = [];
+  board.forEach((cell, index) => {
+    if (cell === ' ') {
+      availableMoves.push(index);
+    }
+  });
+  return availableMoves[Math.floor(Math.random() * availableMoves.length)];
+}
+
+
+function findBestMove(tempBoard, cpuMark, difficulty) {
   let bestMoveIndex = -1;
   let bestVal = -1000;
   
