@@ -83,6 +83,11 @@ export const gameSlice = createSlice({
     removeHoverMark: (state) => {
       state.hoverIndex = -1;
     },
+    resetRecord: (state) => {
+      state.winsX = 0;
+      state.winsO = 0;
+      state.ties = 0;
+    },
     restartGame: (state) => {
       state.board = [...Array(9).fill(' ')];
       state.currentTurn = MARKS.X;
@@ -110,6 +115,7 @@ export const {
   removeHoverMark,
   addMarkToBoard,
   removeMarkFromBoard,
+  resetRecord,
   restartGame,
   selectOpponent,
   setDifficulty,

@@ -62,8 +62,9 @@
   gap: 16px;
   margin-top: 24px;
 
-  &-clear-history {
+  &-cancel {
     background-color: v.$color-cyan-lighter;
+    min-height: 72px;
   }
 
   &-settings {
@@ -89,6 +90,7 @@
 
   &-quit-game {
     background-color: v.$color-yellow;
+    min-height: 72px;
     min-width: 100px;
   }
 }

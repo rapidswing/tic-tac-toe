@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setDifficulty, restartGame, reset, togglePause } from 'features/gameSlice';
+import { setDifficulty, resetRecord, restartGame, reset, togglePause } from 'features/gameSlice';
 
 import ModalBottom from 'components/Modal/ModalBottom/ModalBottom';
 import ModalTop from 'components/Modal/ModalTop/ModalTop';
@@ -12,6 +12,10 @@ function Modal() {
   const modalState = useSelector((state) => state.game.modalState);
   const difficulty = useSelector((state) => state.game.difficulty);
   const dispatch = useDispatch();
+
+  const handleCancel = () => {
+    dispatch(togglePause());
+  }
 
   const handleDifficulty = (id) => {
     dispatch(setDifficulty(id));
@@ -58,9 +62,8 @@ function Modal() {
         return (
           <>
             <div className="modal-choices-settings">
-              <button className="modal-choices-clear-history">
-                <div>RESET</div>
-                <div>RECORD</div>
+              <button onClick={handleCancel} className="modal-choices-cancel">
+                <div>CANCEL</div>
               </button>
               <div className="modal-choices-difficulty">
                 <button className={difficulty === DIFFICULTIES.EASY && 'active'} id={`${DIFFICULTIES.EASY}`} onClick={(event) => handleDifficulty(event.target.id)}>EASY</button>
