@@ -17,6 +17,10 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+html, body, #root, #root>div {
+  height: 100%;
+}
+
 img {
   -webkit-user-drag: none;
   -khtml-user-drag: none;
@@ -26,6 +30,6 @@ img {
 
 .App {
   display: flex;
-  height: 100vh;
   min-width: 375px;
+  max-width: 400px;
 }
