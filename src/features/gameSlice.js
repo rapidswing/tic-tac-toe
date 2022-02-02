@@ -2,11 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { getBoardResult } from "utilities/helpers";
 
-import { BOARD_RESULTS, BOARD_RESULT_MODES, MARKS, MODAL_STATES, PLAYERS, STATUS } from "utilities/constants";
+import { BOARD_RESULTS, BOARD_RESULT_MODES, DIFFICULTIES, MARKS, MODAL_STATES, PLAYERS, STATUS } from "utilities/constants";
 
 const initialState = {
   board: [...Array(9).fill(' ')],
   currentTurn: MARKS.X,
+  difficulty: DIFFICULTIES.EASY,
   hoverIndex: -1,
   modalState: MODAL_STATES.NONE,
   selectedMark: MARKS.X,
@@ -31,16 +32,19 @@ export const gameSlice = createSlice({
         case BOARD_RESULTS.X: {
           state.winsX++;
           state.status = STATUS.GAME_OVER;
+          state.modalState = MODAL_STATES.QUIT_GAME;
           return;
         }
         case BOARD_RESULTS.O: {
           state.winsO++;
           state.status = STATUS.GAME_OVER;
+          state.modalState = MODAL_STATES.QUIT_GAME;
           return;
         }
         case BOARD_RESULTS.TIE: {
           state.ties++;
           state.status = STATUS.GAME_OVER;
+          state.modalState = MODAL_STATES.QUIT_GAME;
           return;
         }
         default: {
@@ -62,6 +66,9 @@ export const gameSlice = createSlice({
     },
     selectOpponent: (state, action) => {
       state.opponent = action.payload
+    },
+    setDifficulty: (state, action) => {
+      state.difficulty = action.payload;
     },
     setFirstTurn: (state) => {
       if (state.opponent === PLAYERS.CPU && state.selectedMark !== MARKS.X) {
@@ -105,6 +112,7 @@ export const {
   removeMarkFromBoard,
   restartGame,
   selectOpponent,
+  setDifficulty,
   setFirstTurn,
   togglePause,
   toggleSelectedMark,

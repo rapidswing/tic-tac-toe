@@ -45,3 +45,9 @@ export const MODAL_STATES = {
   PAUSED: 'PAUSED',
   QUIT_GAME: 'QUIT_GAME'
 }
+
+export const DIFFICULTIES = {
+  EASY: 'EASY',
+  NORMAL: 'NORMAL',
+  HARD: 'HARD'
+}

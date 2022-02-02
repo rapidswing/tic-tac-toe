@@ -1,4 +1,4 @@
-@use 'utilities/variables' as v;
+@use 'utilities/variables'as v;
 
 .modal-background {
   display: flex;
@@ -61,21 +61,54 @@
   display: flex;
   gap: 16px;
   margin-top: 24px;
+
+  &-clear-history {
+    background-color: v.$color-cyan-lighter;
+  }
+
+  &-settings {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &-difficulty {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    button {
+      background-color: v.$color-gray-dark;
+      min-height: 72px;
+
+      &.active {
+        background-color: v.$color-white;
+      }
+    }
+  }
+
+  &-quit-game {
+    background-color: v.$color-yellow;
+    min-width: 100px;
+  }
 }
 
-.modal-content-restart, .modal-content-end {
+.modal-content-restart,
+.modal-content-end {
   font-size: v.$font-size-medium;
   font-weight: v.$font-weight-medium;
   letter-spacing: v.$font-kerning-medium;
 }
 
-#modal-cancel, #modal-quit {
+#modal-cancel,
+#modal-quit {
   background: v.$color-gray;
   box-shadow: inset 0 -4px 0 v.$color-gray-dark;
   color: v.$color-cyan-dark;
 }
 
-#modal-restart, #modal-nextround {
+#modal-restart,
+#modal-nextround {
   background: v.$color-yellow;
   box-shadow: inset 0 -4px 0 v.$color-yellow-dark;
   color: v.$color-cyan-dark;

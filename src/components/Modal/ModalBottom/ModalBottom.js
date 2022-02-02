@@ -2,14 +2,14 @@ import { useSelector } from 'react-redux';
 
 import { getBoardResult } from "utilities/helpers";
 
-import { BOARD_RESULTS, BOARD_RESULT_MODES, STATUS } from 'utilities/constants';
+import { BOARD_RESULTS, BOARD_RESULT_MODES, MODAL_STATES, STATUS } from 'utilities/constants';
 
 import iconO from 'assets/icon-o.svg';
 import iconX from 'assets/icon-x.svg';
 
 function ModalBottom() {
   const board = useSelector((state) => state.game.board);
-  const paused = useSelector((state) => state.game.paused);
+  const modalState = useSelector((state) => state.game.modalState);
   const status = useSelector((state) => state.game.status);
 
   if (status === STATUS.GAME_OVER) {  // game is over
@@ -42,7 +42,7 @@ function ModalBottom() {
       }
     }
   }
-  if (paused) {  // game is paused
+  if (modalState === MODAL_STATES.PAUSED) {  // game is paused
     return <div className="modal-content-bottom-text">RESTART GAME?</div>
   }
   return <></>

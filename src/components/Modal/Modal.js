@@ -1,16 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { restartGame, reset, togglePause } from 'features/gameSlice';
+import { setDifficulty, restartGame, reset, togglePause } from 'features/gameSlice';
 
 import ModalBottom from 'components/Modal/ModalBottom/ModalBottom';
 import ModalTop from 'components/Modal/ModalTop/ModalTop';
 
 import './Modal.scss';
-import { MODAL_STATES } from 'utilities/constants';
+import { DIFFICULTIES, MODAL_STATES } from 'utilities/constants';
 
 function Modal() {
   const modalState = useSelector((state) => state.game.modalState);
+  const difficulty = useSelector((state) => state.game.difficulty);
   const dispatch = useDispatch();
+
+  const handleDifficulty = (id) => {
+    dispatch(setDifficulty(id));
+  }
 
   const handleRestartGame = () => {
     dispatch(restartGame());
@@ -49,12 +54,23 @@ function Modal() {
           </>
         )
       }
-      case MODAL_STATES.SETTINGS: {
+      case MODAL_STATES.SETTINGS: {        
         return (
           <>
-            <div className="modal-choices">
-              <div>difficulty options</div>
-              <button id="modal-clear-history">RESET RECORD</button>
+            <div className="modal-choices-settings">
+              <button className="modal-choices-clear-history">
+                <div>RESET</div>
+                <div>RECORD</div>
+              </button>
+              <div className="modal-choices-difficulty">
+                <button className={difficulty === DIFFICULTIES.EASY && 'active'} id={`${DIFFICULTIES.EASY}`} onClick={(event) => handleDifficulty(event.target.id)}>EASY</button>
+                <button className={difficulty === DIFFICULTIES.NORMAL && 'active'} id={`${DIFFICULTIES.NORMAL}`} onClick={(event) => handleDifficulty(event.target.id)}>MEDIUM</button>
+                <button className={difficulty === DIFFICULTIES.HARD && 'active'} id={`${DIFFICULTIES.HARD}`} onClick={(event) => handleDifficulty(event.target.id)}>HARD</button>
+              </div>
+              <button className="modal-choices-quit-game" onClick={handleQuit}>
+                <div>QUIT</div>
+                <div>GAME</div>
+              </button>
             </div>
           </>
         )
