@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { togglePause } from 'features/gameSlice';
+import { togglePause, toggleSettings } from 'features/gameSlice';
 
 import { MARKS } from 'utilities/constants';
 
@@ -19,10 +19,14 @@ function TopBar() {
     dispatch(togglePause());
   }
 
+  const handleSettings = () => {
+    dispatch(toggleSettings());
+  }
+
   return (
     <div className="top-bar">
       <div className="logo">
-        <img src={Logo} alt="Tic-Tac-Toe Logo" />
+        <img src={Logo} alt="Tic-Tac-Toe Logo" onClick={handleSettings} />
       </div>
       <div className="turn-indicator">
         <img

@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { getBoardResult } from "utilities/helpers";
 
-import { BOARD_RESULTS, BOARD_RESULT_MODES, MARKS, PLAYERS, STATUS } from "utilities/constants";
+import { BOARD_RESULTS, BOARD_RESULT_MODES, MARKS, MODAL_STATES, PLAYERS, STATUS } from "utilities/constants";
 
 const initialState = {
   board: [...Array(9).fill(' ')],
   currentTurn: MARKS.X,
   hoverIndex: -1,
-  paused: false,
+  modalState: MODAL_STATES.NONE,
   selectedMark: MARKS.X,
   status: STATUS.INITIAL_GAME_LOAD,
   opponent: null,
@@ -81,9 +81,13 @@ export const gameSlice = createSlice({
       state.currentTurn = MARKS.X;
       state.paused = false;
       state.status = STATUS.INITIAL_GAME_LOAD;
+      state.modalState = MODAL_STATES.NONE;
     },
     togglePause: (state) => {
-      state.paused = !state.paused;
+      state.modalState = state.modalState === MODAL_STATES.PAUSED ? MODAL_STATES.NONE : MODAL_STATES.PAUSED;
+    },
+    toggleSettings: (state) => {
+      state.modalState = state.modalState === MODAL_STATES.SETTINGS ? MODAL_STATES.NONE : MODAL_STATES.SETTINGS;
     },
     toggleSelectedMark: (state, action) => {
       if (state.selectedMark !== action.payload) {
@@ -103,7 +107,8 @@ export const {
   selectOpponent,
   setFirstTurn,
   togglePause,
-  toggleSelectedMark
+  toggleSelectedMark,
+  toggleSettings
 } = gameSlice.actions;
 
 export default gameSlice.reducer;

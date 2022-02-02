@@ -7,14 +7,14 @@ import BottomBar from 'components/Board/BottomBar/BottomBar';
 import Modal from 'components/Modal/Modal';
 import TopBar from 'components/Board/TopBar/TopBar';
 
-import { MARKS, STATUS } from 'utilities/constants';
+import { MARKS, MODAL_STATES, STATUS } from 'utilities/constants';
 import { findBestMove } from 'utilities/helpers';
 
 import './Game.scss';
 
 function Game() {
   const board = useSelector((state) => state.game.board);
-  const paused = useSelector((state) => state.game.paused);
+  const modalState = useSelector((state) => state.game.modalState);
   const selectedMark = useSelector((state) => state.game.selectedMark);
   const status = useSelector((state) => state.game.status);
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ function Game() {
   return (
     <div className="game">
       {
-        (status === STATUS.GAME_OVER || paused) ?
+        (modalState !== MODAL_STATES.NONE) ?
           <Modal /> :
           <></>
       }

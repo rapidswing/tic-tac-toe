@@ -38,3 +38,10 @@ export const BOARD_RESULT_MODES = {
   TYPE: 'TYPE',
   SCORE: 'SCORE'
 }
+
+export const MODAL_STATES = {
+  NONE: 'NONE',
+  SETTINGS: 'SETTINGS',
+  PAUSED: 'PAUSED',
+  QUIT_GAME: 'QUIT_GAME'
+}
