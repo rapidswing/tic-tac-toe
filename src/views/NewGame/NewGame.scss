@@ -1,15 +1,11 @@
 @use 'utilities/variables'as v;
 
 .new-game {
-  font-weight: v.$font-weight-extrasmall;
   margin: 0 24px;
   width: 100%;
 
-  button {
-    cursor: pointer;
-  }
-
   img {
+    cursor: pointer;
     height: 32px;
     object-fit: contain;
     width: 72px;
@@ -31,6 +27,7 @@
   text-align: center;
 
   &-mark {
+    font-weight: v.$font-weight-extrasmall;
     letter-spacing: v.$font-kerning-extrasmall;
     padding: 24px 0;
   }
@@ -46,7 +43,6 @@
   background: v.$color-cyan-dark;
   border-radius: 10px;
   display: flex;
-  justify-content: center;
   margin: 0px 24px;
   padding: 8px 0px;
 
@@ -79,6 +75,7 @@
   color: v.$color-cyan-dark;
   display: flex;
   flex-direction: column;
+  gap: 16px;
   margin-top: 40px;
 
   >button {
@@ -95,7 +92,6 @@
 #vs-cpu-btn {
   background: v.$color-yellow;
   box-shadow: inset 0px -8px 0 v.$color-yellow-dark;
-  margin-bottom: 16px;
 }
 
 #vs-player-btn {
