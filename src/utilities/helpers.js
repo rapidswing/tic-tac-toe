@@ -79,7 +79,7 @@ export const moveWithDifficulty = (board, cpuMark, difficulty) => {
     case DIFFICULTIES.NORMAL: {
       let chance = Math.random() < 0.5;
       if (chance) {
-        return findBestMove(board, cpuMark, difficulty);
+        return findBestMove(board, cpuMark);
       } else {
         return findRandomMove(board);
       }
@@ -87,7 +87,7 @@ export const moveWithDifficulty = (board, cpuMark, difficulty) => {
     case DIFFICULTIES.HARD: {
       let chance = Math.random() < 0.8;
       if (chance) {
-        return findBestMove(board, cpuMark, difficulty);
+        return findBestMove(board, cpuMark);
       } else {
         return findRandomMove(board);
       }
@@ -98,7 +98,7 @@ export const moveWithDifficulty = (board, cpuMark, difficulty) => {
   }
 }
 
-function findRandomMove(board, cpuMark) {
+function findRandomMove(board) {
   let availableMoves = [];
   board.forEach((cell, index) => {
     if (cell === ' ') {
@@ -109,7 +109,7 @@ function findRandomMove(board, cpuMark) {
 }
 
 
-function findBestMove(tempBoard, cpuMark, difficulty) {
+function findBestMove(tempBoard, cpuMark) {
   let bestMoveIndex = -1;
   let bestVal = -1000;
   
