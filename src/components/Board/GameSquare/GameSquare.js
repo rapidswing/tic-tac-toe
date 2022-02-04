@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 
 import iconX from 'assets/icon-x.svg';
 import iconO from 'assets/icon-o.svg';
-import xIconOutline from 'assets/icon-x-outline.svg';
-import oIconOutline from 'assets/icon-o-outline.svg';
+import iconXOutline from 'assets/icon-x-outline.svg';
+import iconOOutline from 'assets/icon-o-outline.svg';
 
 const GameSquare = ({ cell, index }) => {
   const [hoverIndex, setHoverIndex] = useState(-1);
@@ -27,7 +27,7 @@ const GameSquare = ({ cell, index }) => {
       value={cell}
     >
       {hoverIndex === index && cell === ' ' ?
-        <img src={currentTurn === 'X' ? xIconOutline : oIconOutline} alt="Mark" /> :
+        <img src={currentTurn === 'X' ? iconXOutline : iconOOutline} alt="Mark" /> :
         <></>
       }
       {cell === 'X' ? <img src={iconX} alt="X" /> : <></>}

@@ -1,37 +1,37 @@
 @use 'utilities/variables'as v;
 
 .modal-background {
-  display: flex;
   align-items: center;
   background: rgba(0, 0, 0, 0.4);
-  position: fixed;
+  display: flex;
   height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
   width: 100%;
   z-index: 1;
-  top: 0;
-  left: 0;
 }
 
 .modal-content {
+  align-items: center;
   background: v.$color-cyan;
   color: v.$color-gray;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-weight: v.$font-weight-extrasmall;
+  height: fit-content;
+  justify-content: center;
+  left: 0;
   letter-spacing: v.$font-kerning-medium;
   opacity: 0.9;
-  padding-top: 45px;
   padding-bottom: 45px;
-  height: fit-content;
+  padding-top: 45px;
   position: absolute;
-  left: 0;
   width: 100vw;
 
   button {
-    border: none;
     border-radius: 10px;
+    border: none;
     cursor: pointer;
     font-family: v.$font-family;
     font-size: v.$font-size-extrasmall;
@@ -46,10 +46,10 @@
 }
 
 .modal-content-bottom-text {
-  display: flex;
   align-items: center;
-  gap: 10px;
+  display: flex;
   font-size: v.$font-size-medium;
+  gap: 10px;
 
   >img {
     height: 30px;
@@ -68,9 +68,9 @@
   }
 
   &-settings {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 20px;
   }
 
@@ -83,7 +83,7 @@
       min-height: 72px;
       min-width: 100px;
 
-      &.active {
+    &.active {
         background-color: v.$color-white;
       }
     }
@@ -125,7 +125,7 @@
 .x-win {
   color: v.$color-cyan-lighter;
 }
-
+  
 .o-win {
   color: v.$color-yellow;
 }

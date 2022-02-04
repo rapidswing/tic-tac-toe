@@ -1,8 +1,12 @@
 import { useSelector } from 'react-redux';
 
+import {
+  BOARD_RESULTS,
+  BOARD_RESULT_MODES,
+  MODAL_STATES,
+  STATUS 
+} from 'utilities/constants';
 import { getBoardResult } from "utilities/helpers";
-
-import { BOARD_RESULTS, BOARD_RESULT_MODES, MODAL_STATES, STATUS } from 'utilities/constants';
 
 import iconO from 'assets/icon-o.svg';
 import iconX from 'assets/icon-x.svg';

@@ -1,16 +1,15 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import OpponentSelect from 'components/OpponentSelect/OpponentSelect';
 import { toggleSettings } from 'features/gameSlice';
 import PlayerSelect from 'components/PlayerSelect/PlayerSelect';
 import Modal from 'components/Modal/Modal';
 
-
 import { MODAL_STATES } from 'utilities/constants';
 
 import Logo from 'assets/logo.svg';
+
 import './NewGame.scss';
-import { useSelector } from 'react-redux';
 
 function NewGame() {
   const modalState = useSelector((state) => state.game.modalState);

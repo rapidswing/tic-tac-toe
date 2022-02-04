@@ -1,12 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setDifficulty, toggleSettings, restartGame, reset, togglePause } from 'features/gameSlice';
-
 import ModalBottom from 'components/Modal/ModalBottom/ModalBottom';
 import ModalTop from 'components/Modal/ModalTop/ModalTop';
+import {
+  setDifficulty,
+  toggleSettings,
+  restartGame,
+  reset,
+  togglePause
+} from 'features/gameSlice';
+
+import { DIFFICULTIES, MODAL_STATES, PAGES } from 'utilities/constants';
 
 import './Modal.scss';
-import { DIFFICULTIES, MODAL_STATES, PAGES } from 'utilities/constants';
 
 function Modal() {
   const modalState = useSelector((state) => state.game.modalState);

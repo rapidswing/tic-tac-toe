@@ -1,25 +1,25 @@
 @use 'utilities/variables'as v;
 
 .new-game-container {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   height: 100%;
+  justify-content: center;
   width: 100%;
 }
 
 .new-game {
   font-weight: v.$font-weight-extrasmall;
-  width: 100%;
   margin: 0 24px;
+  width: 100%;
 
   button {
     cursor: pointer;
   }
 
   img {
-    object-fit: contain;
     height: 32px;
+    object-fit: contain;
     width: 72px;
   }
 
@@ -90,8 +90,8 @@
   margin-top: 40px;
 
   >button {
-    border-style: none;
     border-radius: 15px;
+    border-style: none;
     font-family: v.$font-family;
     font-size: v.$font-size-extrasmall;
     font-weight: v.$font-weight-extrasmall;
@@ -101,12 +101,12 @@
 }
 
 #vs-cpu-btn {
-  box-shadow: inset 0px -8px 0 v.$color-yellow-dark;
   background: v.$color-yellow;
+  box-shadow: inset 0px -8px 0 v.$color-yellow-dark;
   margin-bottom: 16px;
 }
 
 #vs-player-btn {
-  box-shadow: inset 0px -8px 0 v.$color-cyan-light;
   background: v.$color-cyan-lighter;
+  box-shadow: inset 0px -8px 0 v.$color-cyan-light;
 }

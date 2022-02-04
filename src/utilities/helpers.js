@@ -1,4 +1,9 @@
-import { BOARD_RESULTS, BOARD_RESULT_MODES, DIFFICULTIES, MARKS } from "utilities/constants";
+import {
+  BOARD_RESULTS,
+  BOARD_RESULT_MODES,
+  DIFFICULTIES,
+  MARKS
+} from "utilities/constants";
 
 const areMovesLeft = (board) => {
   for (let i = 0; i <= 8; i++) {

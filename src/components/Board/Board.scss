@@ -9,15 +9,15 @@
 
 .cell {
   background: v.$color-cyan;
-  border: none;
   border-radius: 10px;
+  border: none;
   box-shadow: inset 0 -8px 0 v.$color-cyan-darkest;
   cursor: pointer;
   min-height: 96px;
 
   >img {
     height: 40px;
-    width: 40px;
     pointer-events: none;
+    width: 40px;
   }
 }

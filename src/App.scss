@@ -7,10 +7,10 @@
 body {
   background: v.$color-cyan-dark;
   display: flex;
-  justify-content: center;
   font-family: v.$font-family;
   font-size: v.$font-size-body;
   font-weight: v.$font-weight-body;
+  justify-content: center;
   letter-spacing: v.$font-kerning-body;
   overflow: hidden;
   user-select: none;
@@ -30,6 +30,6 @@ img {
 
 .App {
   display: flex;
-  min-width: 375px;
   max-width: 400px;
+  min-width: 375px;
 }
