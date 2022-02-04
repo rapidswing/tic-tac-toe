@@ -15,6 +15,13 @@
   cursor: pointer;
   min-height: 96px;
   min-width: 96px;
+  // padding: 0;
+
+  @media screen and (min-width: 768px) {
+    min-width: 460px;
+    min-height: 140px;
+    min-width: 140px;
+  }
 
   >img {
     height: 40px;

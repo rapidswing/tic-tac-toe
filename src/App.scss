@@ -28,8 +28,12 @@ html, body, #root {
   align-items: center;
   display: flex;
   justify-content: center;
-  max-width: 375px;
-  min-width: 375px;  
+  max-width: 327px;
+  min-width: 327px;
+  
+  @media screen and (min-width: 768px) {
+    min-width: 460px;
+  }
 }
 
 img {
