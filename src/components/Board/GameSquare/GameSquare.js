@@ -5,10 +5,13 @@ import iconX from 'assets/icon-x.svg';
 import iconO from 'assets/icon-o.svg';
 import iconXOutline from 'assets/icon-x-outline.svg';
 import iconOOutline from 'assets/icon-o-outline.svg';
+import iconXActive from 'assets/icon-x-active.svg';
+import iconOActive from 'assets/icon-o-active.svg';
 
 const GameSquare = ({ cell, index }) => {
   const [hoverIndex, setHoverIndex] = useState(-1);
   const currentTurn = useSelector((state) => state.game.currentTurn);
+  const winningLine = useSelector((state) => state.game.winningLine);
 
   const handleMouseEnter = (index) => {
     setHoverIndex(Number(index));
@@ -20,7 +23,7 @@ const GameSquare = ({ cell, index }) => {
 
   return (
     <button
-      className="cell"
+      className={`cell ${winningLine.includes(index) && `winning-line-${cell}`}`}
       index={index}
       onMouseEnter={(event) => handleMouseEnter(event.target.getAttribute('index'))}
       onMouseLeave={() => handleMouseLeave()}
@@ -30,8 +33,14 @@ const GameSquare = ({ cell, index }) => {
         <img src={currentTurn === 'X' ? iconXOutline : iconOOutline} alt="Mark" /> :
         <></>
       }
-      {cell === 'X' ? <img src={iconX} alt="X" /> : <></>}
-      {cell === 'O' ? <img src={iconO} alt="O" /> : <></>}
+      {cell === 'X' ? 
+        (winningLine.includes(index) ? <img src={iconXActive} alt="X" /> : <img src={iconX} alt="X" />) :
+        <></>
+      }
+      {cell === 'O' ? 
+        (winningLine.includes(index) ? <img src={iconOActive} alt="O" /> : <img src={iconO} alt="O" />) :
+        <></>
+      }
     </button>
   )
 }

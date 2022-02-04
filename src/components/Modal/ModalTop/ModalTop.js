@@ -15,7 +15,7 @@ function ModalTop() {
   const selectedMark = useSelector((state) => state.game.selectedMark);
 
   let topText = '';
-  let boardResult = getBoardResult(board, BOARD_RESULT_MODES.TYPE);
+  let boardResult = getBoardResult(board, BOARD_RESULT_MODES.TYPE).mark;
   if (status === STATUS.GAME_OVER) {  // game is over
     if (boardResult !== BOARD_RESULTS.TIE) {  // it's not a tie
       if (boardResult === selectedMark) {  // you won

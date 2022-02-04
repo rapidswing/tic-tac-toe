@@ -15,7 +15,6 @@
   cursor: pointer;
   min-height: 96px;
   min-width: 96px;
-  // padding: 0;
 
   @media screen and (min-width: 768px) {
     min-width: 460px;
@@ -28,4 +27,12 @@
     pointer-events: none;
     width: 40px;
   }
+}
+
+.winning-line-X {
+  background: v.$color-cyan-lightest;
+}
+
+.winning-line-O {
+  background: v.$color-yellow-light;
 }

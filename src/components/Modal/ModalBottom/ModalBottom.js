@@ -17,7 +17,7 @@ function ModalBottom() {
   const status = useSelector((state) => state.game.status);
 
   if (status === STATUS.GAME_OVER) {  // game is over
-    switch (getBoardResult(board, BOARD_RESULT_MODES.TYPE)) {
+    switch (getBoardResult(board, BOARD_RESULT_MODES.TYPE).mark) {
       case BOARD_RESULTS.X: {  // X won
         return (
           <div className="modal-content-bottom-text">

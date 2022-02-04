@@ -18,6 +18,7 @@ const initialState = {
   selectedMark: MARKS.X,
   status: STATUS.INITIAL_GAME_LOAD,
   opponent: null,
+  winningLine: [],
   winsX: 0,
   winsO: 0,
   ties: 0
@@ -33,17 +34,19 @@ export const gameSlice = createSlice({
       if (state.board[index] !== ' ') return;  // move is invalid
       state.board[index] = state.currentTurn;
       let result = getBoardResult(state.board, BOARD_RESULT_MODES.TYPE);
-      switch (result) {
+      switch (result.mark) {
         case BOARD_RESULTS.X: {
           state.winsX++;
           state.status = STATUS.GAME_OVER;
           state.modalState = MODAL_STATES.QUIT_GAME;
+          state.winningLine = result.line;
           return;
         }
         case BOARD_RESULTS.O: {
           state.winsO++;
           state.status = STATUS.GAME_OVER;
           state.modalState = MODAL_STATES.QUIT_GAME;
+          state.winningLine = result.line;
           return;
         }
         case BOARD_RESULTS.TIE: {
@@ -83,16 +86,17 @@ export const gameSlice = createSlice({
       }
     },
     resetRecord: (state) => {
-      state.winsX = 0;
-      state.winsO = 0;
       state.ties = 0;
+      state.winsO = 0;
+      state.winsX = 0;
     },
     restartGame: (state) => {
       state.board = [...Array(9).fill(' ')];
       state.currentTurn = MARKS.X;
+      state.modalState = MODAL_STATES.NONE;
       state.paused = false;
       state.status = STATUS.INITIAL_GAME_LOAD;
-      state.modalState = MODAL_STATES.NONE;
+      state.winningLine = [];
     },
     togglePause: (state) => {
       state.modalState = state.modalState === MODAL_STATES.PAUSED ? MODAL_STATES.NONE : MODAL_STATES.PAUSED;
