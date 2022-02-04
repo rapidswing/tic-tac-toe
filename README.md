@@ -10,9 +10,6 @@ There is an added **Settings** option, which is accessible by clicking the **XO*
 
 ## Frameworks, libraries, and tools
 
----
-<br />
-
 - React
 
 - React Redux
