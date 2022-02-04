@@ -39,6 +39,14 @@
   }
 }
 
+.modal-content {
+  min-width: 327px;
+
+  @media screen and (min-width: 768px) {
+    min-width: 491px;
+  }
+}
+
 .modal-content-top-text {
   padding-bottom: 16px;
   text-align: center;
@@ -47,6 +55,7 @@
 .modal-content-bottom-text {
   display: flex;
   font-size: v.$font-size-medium;
+  align-items: center;
   justify-content: center;
 
   > img {
@@ -150,4 +159,26 @@
 
 .o-win {
   color: v.$color-yellow;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-bar {
+    padding-bottom: 66px;
+    padding-top: 66px;
+  }
+  
+  .modal-choices {
+    width: 491px;
+  }
+  
+  .modal-content-bottom-text {
+    font-size: v.$font-size-large;
+    letter-spacing: v.$font-kerning-large;
+    
+    > img {
+      height: 64px;
+      margin-right: 24px;
+      width: 64px;
+    }
+  }
 }

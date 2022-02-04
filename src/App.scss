@@ -31,10 +31,6 @@ html, body, #root {
   justify-content: center;
   max-width: 327px;
   min-width: 327px;
-  
-  @media screen and (min-width: 768px) {
-    min-width: 460px;
-  }
 }
 
 img {
@@ -42,4 +38,10 @@ img {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    min-width: 460px;
+  }
 }
