@@ -6,19 +6,30 @@
 
 body {
   background: v.$color-cyan-dark;
-  display: flex;
   font-family: v.$font-family;
   font-size: v.$font-size-body;
   font-weight: v.$font-weight-body;
-  justify-content: center;
   letter-spacing: v.$font-kerning-body;
   overflow: hidden;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-html, body, #root, #root>div {
+html, body, #root {
   height: 100%;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  max-width: 375px;
+  min-width: 375px;  
 }
 
 img {
@@ -26,10 +37,4 @@ img {
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-}
-
-.App {
-  display: flex;
-  max-width: 400px;
-  min-width: 375px;
 }

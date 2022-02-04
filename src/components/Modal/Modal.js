@@ -75,7 +75,7 @@ function Modal() {
                 <button className={difficulty === DIFFICULTIES.HARD ? 'active' : undefined} id={`${DIFFICULTIES.HARD}`} onClick={(event) => handleDifficulty(event.target.id)}>HARD</button>
               </div>
               <div className="modal-choices-quit-or-cancel">
-                <button onClick={handleCancel} className="modal-choices-cancel">
+                <button className="modal-choices-cancel" onClick={handleCancel}>
                   <div>RETURN</div>
                   <div>TO GAME</div>
                 </button>

@@ -1,4 +1,4 @@
-@use 'utilities/variables'as v;
+@use "utilities/variables" as v;
 
 .modal-background {
   align-items: center;
@@ -51,7 +51,7 @@
   font-size: v.$font-size-medium;
   gap: 10px;
 
-  >img {
+  > img {
     height: 30px;
     width: 30px;
   }
@@ -83,7 +83,7 @@
       min-height: 72px;
       min-width: 100px;
 
-    &.active {
+      &.active {
         background-color: v.$color-white;
       }
     }
@@ -122,10 +122,28 @@
   color: v.$color-cyan-dark;
 }
 
+.modal-choices-difficulty {
+  button {
+    box-shadow: inset 0 -4px 0 v.$color-gray-darkest;
+
+    &.active {
+      box-shadow: inset 0 -4px 0 v.$color-gray-dark;
+    }
+  }
+}
+
+.modal-choices-cancel {
+  box-shadow: inset 0 -4px 0 v.$color-cyan-light;
+}
+
+.modal-choices-quit-game {
+  box-shadow: inset 0 -4px 0 v.$color-yellow-dark;
+}
+
 .x-win {
   color: v.$color-cyan-lighter;
 }
-  
+
 .o-win {
   color: v.$color-yellow;
 }

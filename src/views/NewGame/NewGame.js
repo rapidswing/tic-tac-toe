@@ -14,23 +14,21 @@ import './NewGame.scss';
 function NewGame() {
   const modalState = useSelector((state) => state.game.modalState);
   const dispatch = useDispatch();
-  
+
   const handleClick = () => {
     dispatch(toggleSettings());
   }
-  
+
   return (
-    <div className="new-game-container">
-      <div className="new-game">
+    <div className="new-game">
       {
         (modalState !== MODAL_STATES.NONE) ?
           <Modal /> :
           <></>
       }
-        <img src={Logo} alt="Tic-Tac-Toe logo" onClick={handleClick} className="logo" />
-        <PlayerSelect />
-        <OpponentSelect />
-      </div>
+      <img src={Logo} alt="Tic-Tac-Toe logo" onClick={handleClick} className="logo" />
+      <PlayerSelect />
+      <OpponentSelect />
     </div>
   )
 };
