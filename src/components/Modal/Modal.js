@@ -98,8 +98,10 @@ function Modal() {
 
   return (
     <div className="modal-background">
-      <div className="modal-content">
+      <div className="modal-bar">
+        <div className="modal-content">
         {selectModal()}
+        </div>
       </div>
     </div>
   );

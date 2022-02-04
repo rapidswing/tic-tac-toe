@@ -25,7 +25,7 @@
   box-shadow: inset 0px -4px 0px v.$color-cyan-darkest;
   color: v.$color-gray;
   display: flex;
-  gap: 9px;
+  // gap: 9px;
   height: 100%;
   justify-content: center;
   margin: auto;
@@ -33,6 +33,7 @@
 
   >img {
     height: 16px;
+    margin-right: 9px;
     width: 16px;
   }
 }

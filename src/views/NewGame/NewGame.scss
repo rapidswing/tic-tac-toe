@@ -74,8 +74,10 @@
   color: v.$color-cyan-dark;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  // gap: 16px;
   margin-top: 40px;
+
+  > * + * { margin-bottom: 16px;}
 
   >button {
     border-radius: 15px;
@@ -95,6 +97,7 @@
 #vs-cpu-btn {
   background: v.$color-yellow;
   box-shadow: inset 0px -8px 0 v.$color-yellow-dark;
+  margin-bottom: 20px;
 }
 
 #vs-player-btn {

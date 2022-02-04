@@ -12,7 +12,7 @@
   z-index: 1;
 }
 
-.modal-content {
+.modal-bar {
   align-items: center;
   background: v.$color-cyan;
   color: v.$color-gray;
@@ -41,24 +41,26 @@
 
 .modal-content-top-text {
   padding-bottom: 16px;
+  text-align: center;
 }
 
 .modal-content-bottom-text {
-  align-items: center;
   display: flex;
   font-size: v.$font-size-medium;
-  gap: 10px;
+  justify-content: center;
 
   > img {
     height: 30px;
+    margin-right: 9px;
     width: 30px;
   }
 }
 
 .modal-choices {
   display: flex;
-  gap: 16px;
+  justify-content: center;
   margin-top: 24px;
+  width: 327px;
 
   &-cancel {
     background-color: v.$color-cyan-lighter;
@@ -66,15 +68,17 @@
   }
 
   &-settings {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: grid;
+    justify-items: center;
+    margin: auto;
+    min-width: 375px;
   }
 
   &-difficulty {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    margin-bottom: 20px;
 
     button {
       background-color: v.$color-gray-dark;
@@ -94,6 +98,7 @@
 
   &-quit-game {
     background-color: v.$color-yellow;
+    margin-left: 20px;
     min-height: 72px;
     min-width: 100px;
   }
@@ -111,6 +116,7 @@
   background: v.$color-gray;
   box-shadow: inset 0 -4px 0 v.$color-gray-dark;
   color: v.$color-cyan-dark;
+  margin-right: 16px;
 }
 
 #modal-restart,
