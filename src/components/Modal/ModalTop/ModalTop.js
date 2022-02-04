@@ -33,10 +33,10 @@ function ModalTop() {
         }
       }
     } else {  // it's a tie
-      // return nothing
+      return <></>
     }
   } else { // game is paused
-    // return nothing
+    return <></>
   }
   return <div className="modal-content-top-text">{topText}</div>
 }
