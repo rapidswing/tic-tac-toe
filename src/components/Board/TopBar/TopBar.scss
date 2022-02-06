@@ -12,7 +12,6 @@
   display: flex;
 
   > img {
-    cursor: pointer;
     height: 32px;
     width: 72px;
   }
@@ -48,7 +47,6 @@
   border-radius: 5px;
   border: none;
   box-shadow: inset 0px -4px 0px v.$color-gray-dark;
-  cursor: pointer;
   padding: 0 12px;
 
   > img {

@@ -40,6 +40,10 @@ img {
   -o-user-drag: none;
 }
 
+button, .logo {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
   .App {
     min-width: 460px;

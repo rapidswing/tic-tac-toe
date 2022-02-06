@@ -26,7 +26,7 @@ function NewGame() {
           <Modal /> :
           <></>
       }
-      <img src={Logo} alt="Tic-Tac-Toe logo" onClick={handleClick} className="logo" />
+      <img src={Logo} alt="Tic-Tac-Toe logo" onClick={handleClick} className="logo clickable" />
       <PlayerSelect />
       <OpponentSelect />
     </div>
